@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Suspense } from "react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +29,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+         <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden">
+            <Suspense>{children}</Suspense>
+            {/* <FloatingNav /> */} 
+          </main>
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import {  Div } from "../Common/Index";
+import Image from "next/image"; // Add this import statement
 
 export const About = () => {
   return (
@@ -23,7 +24,7 @@ export const About = () => {
         >
           <h1 className="text-2xl md:text-3xl font-bold mb-4">About Me</h1>
           <p className="text-sm md:text-lg leading-relaxed">
-            I am a <strong>MERN Stack Developer</strong> with a Bachelor's
+            I am a <strong>MERN Stack Developer</strong> with a Bachelor &apos s
             degree in Computer Applications (BCA) from the University of
             Calicut. Over the past year, I have gained valuable experience as a
             self-taught developer and intern, specializing in full-stack
@@ -50,7 +51,7 @@ export const About = () => {
           }}
           className="w-full md:w-1/3 flex justify-center md:justify-end mt-6 md:mt-0"
         >
-          <img
+          <Image
             src="/My-Pic.jpg"
             className="rounded-xl rotate-6 shadow-lg w-40 md:w-64 max-w-full"
             alt="Profile"

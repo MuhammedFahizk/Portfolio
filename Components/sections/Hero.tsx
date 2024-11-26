@@ -2,7 +2,7 @@
 import React from "react";
 import { Background } from "../Layout/Index";
 import { Div, AnimatedIcons, Button } from "../Common/Index";
-import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
+import { FaReact, FaNodeJs } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiMongodb, SiRedux } from "react-icons/si";
 import { CiSaveDown1 } from "react-icons/ci";
@@ -62,7 +62,6 @@ export const Hero = () => {
         {/* Content with animations */}
         <Div className="text-center absolute">
           <Div
-            as="p"
             className="text-lg mb-4 text-end"
             aosProps={{
               animation: "fade-left", // AOS animation
@@ -76,7 +75,6 @@ export const Hero = () => {
           </Div>
 
           <Div
-            as="h1"
             className="text-5xl font-bold mb-4"
             aosProps={{
               animation: "fade-down",
@@ -89,7 +87,6 @@ export const Hero = () => {
           </Div>
 
           <Div
-            as="p"
             className="text-lg text-start text-primary"
             aosProps={{
               animation: "fade-right",

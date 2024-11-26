@@ -10,7 +10,7 @@ type AnimatedIconsProps = {
     animationProps?: MotionProps; // Custom animation props for each icon
     size?: number; // Icon size
     color?: string; // Icon color
-    floatDirection?: ''; // Optional direction for floating animation
+    floatDirection?: string; // Optional direction for floating animation
   }[];
   className?: string; // Additional classes for container
 };

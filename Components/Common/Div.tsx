@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 type DivProps = {
   children: React.ReactNode;
   className?: string;
+  ref?:string;
   aosProps?: {
     animation?: string;
     easing?: string;
@@ -15,7 +16,7 @@ type DivProps = {
   };
 };
 
-export const Div = ({ style,children, className, aosProps, as }: DivProps) => {
+export const Div = ({ style,children, className, aosProps, as , ref}: DivProps) => {
   useEffect(() => {
     // Initialize AOS with default configuration
     AOS.init({
@@ -29,6 +30,7 @@ export const Div = ({ style,children, className, aosProps, as }: DivProps) => {
 
   return (
     <div
+    ref={ref}
     style={style}
       className={className}
       data-aos={aosProps?.animation || "fade-up"} // Default animation

@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
+import { Div } from "../Common/Index";
 
 export const InfiniteMovingCards = ({
   items,
@@ -12,6 +13,7 @@ export const InfiniteMovingCards = ({
 }) => {
   const containerRef = React.useRef(null);
   const scrollerRef = React.useRef(null);
+console.log(items);
 
   useEffect(() => {
     addAnimation();
@@ -65,7 +67,7 @@ export const InfiniteMovingCards = ({
   };
 
   return (
-    <div
+    <Div
       ref={containerRef}
       className={cn(
         "scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
@@ -80,37 +82,29 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item, idx) => (
-          <li
-            className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px]"
-            style={{
-              background:
-                "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
-            }}
-            key={item.name}
-          >
-            <blockquote>
-              <div
-                aria-hidden="true"
-                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <span className=" relative z-20 text-sm leading-[1.6] text-gray-100 font-normal">
-                {item.quote}
-              </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1">
-                  <span className=" text-sm leading-[1.6] text-gray-400 font-normal">
-                    {item.name}
-                  </span>
-                  <span className=" text-sm leading-[1.6] text-gray-400 font-normal">
-                    {item.title}
-                  </span>
-                </span>
-              </div>
-            </blockquote>
-          </li>
-        ))}
-      </ul>
+       {items.map((item) => (
+  <li
+    key={item.id}
+    className="flex flex-col items-center justify-center w-[100px] md:w-[150px]   p-4 bg-gray-800 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+    style={{
+      borderColor: item.color,
+      background: `linear-gradient(145deg, ${item.color}33, ${item.color}11)`,
+    }}
+  >
+    <div
+      className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full"
+      style={{
+        backgroundColor: `${item.color}22`,
+        boxShadow: `0 4px 10px ${item.color}55`,
+      }}
+    >
+      <item.icon className="text-2xl md:text-3xl" style={{ color: item.color }} />
     </div>
+    <p className="mt-3 text-sm md:text-base font-medium text-center  text-white">{item.name}</p>
+  </li>
+))}
+
+      </ul>
+    </Div>
   );
 };

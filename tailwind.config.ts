@@ -4,20 +4,11 @@ import plugin from "tailwindcss/plugin";
 import svgToDataUri from "mini-svg-data-uri";
 
 export default {
-  content: [
-      "./pages/**/*.{ts,tsx}",
-      "./components/**/*.{ts,tsx}",
-      "./app/**/*.{ts,tsx}",
-      "./src/**/*.{ts,tsx}",
-      "./data/**/*.{ts,tsx}",
-   
-  ],
+  content: ["./index.html", "./src/**/*.{html,js,jsx,ts,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+      
      
       animation: {
         scroll:
@@ -55,19 +46,7 @@ export default {
   },
   plugins: [
     daisyui,
-    plugin(function ({ matchUtilities, theme }) {
-      matchUtilities(
-        {
-          "bg-grid": (value) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100" height="100" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
-            )}")`,
-          }),
-        },
-        { values: theme("colors") }
-      );
-    }),
+    
   ],
   daisyui: {
     themes: [

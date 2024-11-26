@@ -1,8 +1,8 @@
 
-import {  Div } from "@/Components/Common/Index";
-import {  NavBar } from "@/Components/Layout/Index";
-import {Hero, About} from "@/Components/sections/Index";
-import { Skills } from "@/Components/sections/Skills";
+import {  Div } from "@/app/Components/Common/Index";
+import {  NavBar } from "@/app/Components/Layout/Index";
+import {Hero, About} from "@/app/Components/sections/Index";
+import { Skills } from "@/app/Components/sections/Skills";
 export default function Home() {
   return (
     <>

@@ -55,6 +55,8 @@ export const About = () => {
             src="/My-Pic.jpg"
             className="rounded-xl rotate-6 shadow-lg w-40 md:w-64 max-w-full"
             alt="Profile"
+            width= {200}
+            height={200}
           />
         </Div>
       </Div>

@@ -5,9 +5,11 @@ import svgToDataUri from "mini-svg-data-uri";
 
 export default {
   content: [
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',    // Include all files in the pages folder
+    './components/**/*.{js,ts,jsx,tsx}',  // Include all files in the components folder
+    './app/**/*.{js,ts,jsx,tsx}',         // If you're using the app directory (e.g., Next.js 13+)
   ],
+  
   theme: {
     extend: {
       colors: {

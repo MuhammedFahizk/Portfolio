@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Div } from "../Common/Index";
 
 type InfiniteMovingCardsProps = {
@@ -27,41 +27,26 @@ export const InfiniteMovingCards = ({
 
   console.log(items);
 
-  useEffect(() => {
-    addAnimation();
-  }, [addAnimation]); // Add 'addAnimation' to the dependency array
 
   const [start, setStart] = useState(false);
 
-  function addAnimation() {
+  const addAnimation = useCallback(() => {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
-
+  
       scrollerContent.forEach((item) => {
         const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
+        scrollerRef.current?.appendChild(duplicatedItem);
       });
-
-      getDirection();
-      getSpeed();
-      setStart(true);
-    }
-  }
-
-  const getDirection = () => {
-    if (containerRef.current) {
+  
+      // Direction setup
       if (direction === "left") {
         containerRef.current.style.setProperty("--animation-direction", "forwards");
       } else {
         containerRef.current.style.setProperty("--animation-direction", "reverse");
       }
-    }
-  };
-
-  const getSpeed = () => {
-    if (containerRef.current) {
+  
+      // Speed setup
       if (speed === "fast") {
         containerRef.current.style.setProperty("--animation-duration", "20s");
       } else if (speed === "normal") {
@@ -69,9 +54,16 @@ export const InfiniteMovingCards = ({
       } else {
         containerRef.current.style.setProperty("--animation-duration", "80s");
       }
+  
+      setStart(true);
     }
-  };
+  }, [direction, speed]);
+  
 
+  useEffect(() => {
+    addAnimation();
+  }, [addAnimation]);
+ 
   return (
     <Div
       ref={containerRef}

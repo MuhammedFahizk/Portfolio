@@ -6,7 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 type DivProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   ref?: React.Ref<HTMLDivElement>; // Accepts a ref to a div element
   style?: React.CSSProperties;

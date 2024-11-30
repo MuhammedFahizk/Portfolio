@@ -11,71 +11,84 @@ import { PiNavigationArrowFill } from "react-icons/pi";
 export const Hero = () => {
   return (
     <Background>
-      <Div className="hero text-white flex items-center justify-center h-screen relative">
+      <Div className="hero flex flex-col items-center justify-center min-h-screen px-6 text-white relative">
+        {/* Animated Icons */}
         <AnimatedIcons
           icons={[
             {
               Icon: FaReact,
               position: { top: "30%", left: "10%" },
-              size: 50,
-              color: "#61DAFB", // React icon color
+              smPosition: { top: "15%", left: "5%" },
+              size: 60,
+              smSize: 30,
+              color: "#61DAFB",
               floatDirection: "animate-float-left",
             },
             {
               Icon: RiNextjsFill,
-              position: { top: "15%", left: "50%" },
-              size: 50,
-              color: "#000", // Next.js icon color
+              position: { top: "5%", right: "10%" },
+              smPosition: { top: "10%", right: "5%" },
+              size: 60,
+              smSize: 30,
+              color: "#000",
               floatDirection: "animate-float-right",
             },
             {
               Icon: FaNodeJs,
-              position: { bottom: "20%", right: "15%" },
-              size: 50,
-              color: "#68A063", // Node.js icon color
-              floatDirection: "animate-float ",
+              position: { bottom: "0%", right: "15%" },
+              smPosition: { bottom: "10%", right: "10%" },
+              size: 60,
+              smSize: 30,
+              color: "#68A063",
+              floatDirection: "animate-float",
             },
             {
               Icon: RiTailwindCssFill,
               position: { bottom: "20%", left: "15%" },
-              size: 50,
-              color: "#38B2AC", // Tailwind CSS icon color
-              floatDirection: "animate-float-left ",
+              smPosition: { bottom: "10%", left: "5%" },
+              size: 60,
+              smSize: 30,
+              color: "#38B2AC",
+              floatDirection: "animate-float-left",
             },
             {
               Icon: SiRedux,
               position: { bottom: "10%", right: "45%" },
-              size: 50,
-              color: "#764ABC", // Redux icon color
+              smPosition: { bottom: "5%", right: "40%" },
+              size: 60,
+              smSize: 30,
+              color: "#764ABC",
               floatDirection: "animate-float-right",
             },
             {
               Icon: SiMongodb,
               position: { top: "30%", right: "10%" },
-              size: 50,
-              color: "#4DB33D", // MongoDB icon color
+              smPosition: { top: "20%", right: "5%" },
+              size: 60,
+              smSize: 30,
+              color: "#4DB33D",
               floatDirection: "animate-float-top",
             },
           ]}
         />
 
-        {/* Content with animations */}
-        <Div className="text-center absolute">
+        {/* Hero Content */}
+        <Div className="text-center relative z-20">
           <Div
-            className="text-lg mb-4 text-end"
+            className="  sm:text-center md:text-end  md:text-lg text-accent mb-4"
             aosProps={{
-              animation: "fade-left", // AOS animation
+              animation: "fade-left",
               easing: "ease-in-out",
               duration: 1000,
               delay: 0,
             }}
           >
             Build scalable web applications with{" "}
-            <span className="text-primary">MERN</span> stack.
+            <span className="text-primary font-semibold">MERN</span> stack.
           </Div>
 
           <Div
-            className="text-5xl font-bold mb-4"
+            className="text-3xl sm:text-2xl md:text-5xl font-bold mb-4 leading-tight"
             aosProps={{
               animation: "fade-down",
               easing: "ease-in-out",
@@ -87,7 +100,7 @@ export const Hero = () => {
           </Div>
 
           <Div
-            className="text-lg text-start text-primary"
+            className="text-lg md:text-start text-center sm:text-sm md:text-lg text-primary mb-6"
             aosProps={{
               animation: "fade-right",
               easing: "ease-in-out",
@@ -98,13 +111,14 @@ export const Hero = () => {
             MERN Stack Developer.
           </Div>
 
-          <Div className="flex gap-3 my-10 justify-end">
-            <Button className="btn-primary bg-primary">
-              <PiNavigationArrowFill className="text-xl" />
+          <Div className="flex flex-wrap gap-4 justify-center">
+            <Button className="btn-primary bg-primary px-6 py-3 sm:px-4 sm:py-2 text-sm sm:text-xs flex items-center gap-2">
+              <PiNavigationArrowFill className="text-xl sm:text-lg" />
               Get In Touch
             </Button>
-            <Button className="btn-secondary">
-              <CiSaveDown1 className="text-xl" /> Download Resume
+            <Button className="btn-secondary px-6 py-3 sm:px-4 sm:py-2 text-sm sm:text-xs flex items-center gap-2">
+              <CiSaveDown1 className="text-xl sm:text-lg" />
+              Download Resume
             </Button>
           </Div>
         </Div>

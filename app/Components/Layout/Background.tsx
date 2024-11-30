@@ -4,7 +4,7 @@ import { Div } from "../Common/Index";
 
 export const Background = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Div className="relative w-screen h-screen overflow-hidden">
+    <Div className="relative w-full h-screen overflow-hidden">
       {/* Static Black Background */}
       <div className="absolute inset-0 bg-black z-0" />
 

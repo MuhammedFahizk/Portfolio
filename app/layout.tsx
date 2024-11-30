@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden">
+         <main className="relative bg-info flex justify-center items-center flex-col overflow-hidden">
             <Suspense>{children}</Suspense>
             {/* <FloatingNav /> */} 
           </main>

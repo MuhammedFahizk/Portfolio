@@ -6,7 +6,7 @@ import Link from "next/link";
 export const Projects = () => {
     const projects = [
       {
-        image: "/images/chat-hive.png",
+        image: "/images/chat-hive.jpg",
         title: "Chat Hive",
         description:
           "A real-time chatting application featuring Socket.IO for seamless communication, with a focus on responsive design and intuitive UI.",
@@ -33,7 +33,7 @@ export const Projects = () => {
         shadowColor: "shadow-green-500",
       },
       {
-        image: "/images/track-me.png",
+        image: "/images/drive-wave.png",
         title: "Track Me",
         description:
           "A music streaming application similar to Spotify, integrated with the Shopify API for showcasing music collections while leveraging a custom database for authentication and user management.",

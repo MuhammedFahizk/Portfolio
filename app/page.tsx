@@ -1,9 +1,8 @@
 
 import {  Div } from "@/app/Components/Common/Index";
 import {  NavBar } from "@/app/Components/Layout/Index";
-import {Hero, About} from "@/app/Components/sections/Index";
-import { Skills } from "@/app/Components/sections/Skills";
-import { Projects } from "./Components/sections/Projects";
+import {Hero, About, Skills, Projects, ContactUs} from "@/app/Components/sections/Index";
+
 export default function Home() {
   return (
     <>
@@ -12,6 +11,7 @@ export default function Home() {
           <About/>
           <Skills/>
           <Projects/>
+          <ContactUs/>
 
     </>
   );

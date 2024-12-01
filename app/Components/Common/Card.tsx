@@ -37,18 +37,19 @@ export const Card: React.FC<CardProps> = ({
     
 
       {/* Project Image */}
-      <Div className=" w-fit h-full overflow-hidden rounded-lg mb-4">
-        <Image
-          src={image}
-          alt={title}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg"
-        />
-      </Div>
+      <Div className="relative w-full h-56 overflow-hidden rounded-lg mb-4">
+  <Image
+    src={image}
+    alt={title}
+    fill // Equivalent to layout="fill" in newer versions
+    style={{ objectFit: "cover" }} // Ensures the image covers the container
+    className="rounded-lg"
+  />
+</Div>
+
 
       {/* Project Content */}
-      <Div className="flex flex-col gap-3">
+      <Div className="flex flex-col gap-1">
         {/* Project Title */}
         <h3 className="text-xl font-bold text-gray-900">{title}</h3>
 

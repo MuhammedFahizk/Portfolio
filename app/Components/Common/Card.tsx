@@ -2,7 +2,6 @@
 import React from "react";
 import { Div } from "./Index";
 import Image from "next/image";
-import { AnimatedIcons } from "./AnimatedIcons"; // Import your animation component
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Link from "next/link";
 
@@ -27,7 +26,6 @@ export const Card: React.FC<CardProps> = ({
   bgColorFrom = "from-red-500", // Default colors
   bgColorTo = "to-red-300",
   shadowColor = "shadow-red-500",
-  animationIcons = false,
 }) => {
   return (
     <Div

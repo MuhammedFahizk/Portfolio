@@ -12,7 +12,7 @@ export const ContactForm = () => {
           Get in Touch
         </h2>
         <p className="text-xs sm:text-sm text-neutral mt-2">
-          We'd love to hear from you! Fill out the form below to reach us.
+          We &apos d love to hear from you! Fill out the form below to reach us.
         </p>
       </Div>
 

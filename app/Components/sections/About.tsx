@@ -5,7 +5,7 @@ import Image from "next/image"; // Add this import statement
 
 export const About = () => {
   return (
-    <Div  className="h-screen p-5 md:p-10 flex items-center justify-center bg-cover bg-center rounded-lg">
+    <Div id="about"  className="h-screen p-5 md:p-10 flex items-center justify-center bg-cover bg-center rounded-lg">
       <Div
         className="flex flex-col md:flex-row items-center justify-between bg-secondary bg-opacity-80 p-6 md:p-10 rounded-lg w-full max-w-5xl"
         style={{

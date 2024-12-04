@@ -14,8 +14,7 @@ export const Projects = () => {
         links: {
           repo: "https://github.com/MuhammedFahizk/Social-Media-Frontend",
         },
-        bgColorFrom: "from-indigo-500",
-        bgColorTo: "to-purple-500",
+       
         shadowColor: "shadow-indigo-500",
       },
       {
@@ -28,8 +27,7 @@ export const Projects = () => {
           demo: "https://www.drivewave.site/",
           repo: "https://github.com/MuhammedFahizk/drive-Wave",
         },
-        bgColorFrom: "from-green-500",
-        bgColorTo: "to-teal-400",
+        
         shadowColor: "shadow-green-500",
       },
       {
@@ -42,14 +40,13 @@ export const Projects = () => {
           demo: "https://track-me-demo.com",
           repo: "https://github.com/MuhammedFahizk/TrackVoice",
         },
-        bgColorFrom: "from-blue-500",
-        bgColorTo: "to-cyan-400",
+        
         shadowColor: "shadow-blue-500",
       },
     ];
   
     return (
-      <Div className="my-20 py-10 px-4 sm:px-2 lg:px-8 xl:px-10 flex flex-col justify-center items-center  ">
+      <Div id="projects" className="my-20 py-10 px-4 sm:px-2 lg:px-8 xl:px-10 flex flex-col justify-center items-center  ">
         {/* Section Title */}
         <h1 className="text-3xl md:text-4xl font-bold mb-10 text-center text-primary">
           Favorites
@@ -65,9 +62,6 @@ export const Projects = () => {
               description={project.description}
               technologies={project.technologies}
               links={project.links}
-              bgColorFrom={project.bgColorFrom}
-              bgColorTo={project.bgColorTo}
-              shadowColor={project.shadowColor}
             />
           ))}
         </Div>

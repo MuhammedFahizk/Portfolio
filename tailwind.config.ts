@@ -74,7 +74,7 @@ export default {
           secondary: "#2E3137",
           accent: "#FB5D5D",
           neutral: "#DCDCDD",
-          
+         
           "base-100": "#0F172A",
           success: "#22C55E", // Green for Success
           warning: "#F59E0B", // Yellow for Warnings

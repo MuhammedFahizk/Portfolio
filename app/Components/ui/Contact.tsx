@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Link from "next/link";
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
@@ -5,7 +6,8 @@ import { Div } from "../Common/Div";
 import Image from "next/image";
 
 export const Contact = () => {
-  // Array of contact links
+  // Array of contact links\  const contactRef = useRef(null);
+
   const contactLinks = [
     {
       href: "mailto:fahizk100@gmail.com",
@@ -39,7 +41,9 @@ export const Contact = () => {
   ];
 
   return (
-    <Div className="bg-base-100 text-neutral p-2 md:p-6 rounded-2xl shadow-xl max-w-3xl mx-auto space-y-4 sm:space-y-6">
+   
+
+    <Div id="contact"  className=" bg-base-100 text-neutral p-2 md:p-6 rounded-2xl shadow-xl max-w-3xl mx-auto space-y-4 sm:space-y-6">
       {/* Image Section */}
       <Div className="flex justify-center relative w-full h-72 sm:h-80 md:h-[300px]">
         <Image

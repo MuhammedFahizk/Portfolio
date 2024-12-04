@@ -16,9 +16,11 @@ type DivProps = {
     duration?: number;
     delay?: number;
   };
+  id?: string
+  onClick?: React.MouseEventHandler<HTMLDivElement>; // Correct typing for onClick
 };
 
-export const Div = ({ style,children, className, aosProps , ref}: DivProps) => {
+export const Div = ({ style,children, className, aosProps , ref, id, onClick}: DivProps) => {
   useEffect(() => {
     // Initialize AOS with default configuration
     AOS.init({
@@ -32,7 +34,10 @@ export const Div = ({ style,children, className, aosProps , ref}: DivProps) => {
 
   return (
     <div
+
+    id={id}
     ref={ref}
+    onClick={onClick}
     style={style}
       className={className}
       data-aos={aosProps?.animation || "fade-up"} // Default animation

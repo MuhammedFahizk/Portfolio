@@ -52,7 +52,7 @@ export const About = () => {
           className="w-full md:w-1/3 flex justify-center md:justify-end mt-6 md:mt-0"
         >
           <Image
-            src="/My-Pic.jpg"
+            src="/My-Pic.png"
             className="rounded-xl rotate-6 shadow-lg w-40 md:w-64 max-w-full"
             alt="Profile"
             width= {200}

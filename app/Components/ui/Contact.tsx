@@ -47,8 +47,8 @@ export const Contact = () => {
       {/* Image Section */}
       <Div className="flex justify-center relative w-full h-72 sm:h-80 md:h-[300px]">
         <Image
-          src="/my-pic.jpg"
-          alt="Profile"
+            src="/My-Pic.png"
+            alt="Profile"
           className="shadow-md object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300"
           layout="fill"
           objectFit="cover"

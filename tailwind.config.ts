@@ -47,6 +47,13 @@ export default {
           "50%": { transform: "translateY(-20px)" },
         },
       },
+      fontFamily: {
+        acme: ['var(--font-acme)', 'sans-serif'],
+        courier: [
+          'var(--font-courier)',
+          'monospace',
+        ]
+      },
     },
   },
   plugins: [

@@ -1,126 +1,76 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Background } from "../Layout/Index";
-import { Div, AnimatedIcons, Button } from "../Common/Index";
-import { FaReact, FaNodeJs } from "react-icons/fa";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiMongodb, SiRedux } from "react-icons/si";
+import { Div, Button } from "../Common/Index";
 import { CiSaveDown1 } from "react-icons/ci";
 import { PiNavigationArrowFill } from "react-icons/pi";
+import gsap from "gsap";
 
 export const Hero = () => {
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const texts = ["Full", "MERN"];
+    let currentTextIndex = 0;
+
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+    tl.to(".trans", {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power3.out",
+      onComplete: () => {
+        currentTextIndex = (currentTextIndex + 1) % texts.length;
+        textRef.current.innerText = texts[currentTextIndex];
+      },
+    })
+      .to(textRef.current, { opacity: 1, duration: 0.5 })
+      .delay(2);
+
+    return () => {
+      tl.kill();
+    };
+  }, []);
+
   return (
     <Background>
-      <Div className="hero flex flex-col items-center justify-center min-h-screen px-6 text-white relative">
-        {/* Animated Icons */}
-        <AnimatedIcons
-          icons={[
-            {
-              Icon: FaReact,
-              position: { top: "30%", left: "10%" },
-              smPosition: { top: "15%", left: "5%" },
-              size: 60,
-              smSize: 30,
-              color: "#61DAFB",
-              floatDirection: "animate-float-left",
-            },
-            {
-              Icon: RiNextjsFill,
-              position: { top: "5%", right: "10%" },
-              smPosition: { top: "10%", right: "5%" },
-              size: 60,
-              smSize: 30,
-              color: "#000",
-              floatDirection: "animate-float-right",
-            },
-            {
-              Icon: FaNodeJs,
-              position: { bottom: "0%", right: "15%" },
-              smPosition: { bottom: "10%", right: "10%" },
-              size: 60,
-              smSize: 30,
-              color: "#68A063",
-              floatDirection: "animate-float",
-            },
-            {
-              Icon: RiTailwindCssFill,
-              position: { bottom: "20%", left: "15%" },
-              smPosition: { bottom: "10%", left: "5%" },
-              size: 60,
-              smSize: 30,
-              color: "#38B2AC",
-              floatDirection: "animate-float-left",
-            },
-            {
-              Icon: SiRedux,
-              position: { bottom: "10%", right: "45%" },
-              smPosition: { bottom: "5%", right: "40%" },
-              size: 60,
-              smSize: 30,
-              color: "#764ABC",
-              floatDirection: "animate-float-right",
-            },
-            {
-              Icon: SiMongodb,
-              position: { top: "30%", right: "10%" },
-              smPosition: { top: "20%", right: "5%" },
-              size: 60,
-              smSize: 30,
-              color: "#4DB33D",
-              floatDirection: "animate-float-top",
-            },
-          ]}
-        />
-
-        {/* Hero Content */}
-        <Div className="text-center relative z-20">
-          <Div
-            className="  sm:text-center md:text-end  md:text-lg text-accent mb-4"
-            aosProps={{
-              animation: "fade-left",
-              easing: "ease-in-out",
-              duration: 1000,
-              delay: 0,
-            }}
-          >
-            Build scalable web applications with{" "}
-            <span className="text-primary font-semibold">MERN</span> stack.
+      <Div className="container mx-auto flex flex-col md:flex-row items-center  justify-between min-h-screen px-10 text-white">
+        <Div className="md:w-1/2 text-center md:text-left">
+          <Div className="font-courier text-lg mb-4">Hi all. I am</Div>
+          <Div className="text-5xl font-acme mb-4 leading-tight">
+            Muhammed Fahiz K
           </Div>
-
-          <Div
-            className="text-3xl sm:text-2xl md:text-5xl font-bold mb-4 leading-tight"
-            aosProps={{
-              animation: "fade-down",
-              easing: "ease-in-out",
-              duration: 800,
-              delay: 0,
-            }}
-          >
-            Hi, I am Muhammed <span className="text-accent">Fahiz</span> K.
+          <Div className=" text-xl font-courier text-primary mb-6">
+            &gt; &nbsp;
+            <span ref={textRef} className="trans">
+              Full
+            </span>
+            &nbsp;Stack Developer.
           </Div>
-
-          <Div
-            className="text-lg md:text-start text-center sm:text-sm md:text-lg text-primary mb-6"
-            aosProps={{
-              animation: "fade-right",
-              easing: "ease-in-out",
-              duration: 1000,
-              delay: 0,
-            }}
-          >
-            MERN Stack Developer.
+          <Div className=" text-xs font-courier ">
+            <span className="text-gray-500 ">
+              // you can also see it on my Github Page <br />
+            </span>
+            <span className="text-blue-700">const </span>{" "}
+            <span className=" text-[#3BBE9F]"> gitHubLink </span> = &nbsp;
+            <span className="text-[#BD8306]">
+              <a
+                href="https://github.com/MuhammedFahizk"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://github.com/MuhammedFahizk
+              </a>
+            </span>
           </Div>
+        </Div>
 
-          <Div className="flex flex-wrap gap-4 justify-center">
-            <Button className="btn-primary bg-primary px-6 py-3 sm:px-4 sm:py-2 text-sm sm:text-xs flex items-center gap-2">
-              <PiNavigationArrowFill className="text-xl sm:text-lg" />
-              Get In Touch
-            </Button>
-            <Button className="btn-secondary px-6 py-3 sm:px-4 sm:py-2 text-sm sm:text-xs flex items-center gap-2">
-              <CiSaveDown1 className="text-xl sm:text-lg" />
-              Download Resume
-            </Button>
-          </Div>
+        {/* Right Column: Image */}
+        <Div className="md:w-1/2 flex items-center justify-center mt-8 md:mt-0">
+          <img
+            src="/path/to/your/image.jpg"
+            alt="Profile Picture of Muhammed Fahiz K"
+            className="max-w-full h-auto rounded-lg shadow-lg"
+          />
         </Div>
       </Div>
     </Background>

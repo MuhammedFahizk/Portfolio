@@ -2,17 +2,19 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Suspense } from "react";
+import { Acme, Courier_Prime } from 'next/font/google';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const acme = Acme({
+    subsets: ['latin'],
+    weight: '400',
+    variable: '--font-acme',
+  });
+  
+  const courier = Courier_Prime ( {
+    subsets: ['latin'],
+    weight: '400',
+    variable: '--font-courier',
+  })
 
 export const metadata: Metadata = {
   title: "Muhammed Fahiz - Web Developer",
@@ -34,9 +36,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` antialiased`}
       >
-         <main className="relative bg-info flex justify-center items-center flex-col overflow-hidden">
+         <main className={`relative bg-info flex justify-center items-center flex-col overflow-hidden ${acme.variable} ${courier.variable}`}>
             <Suspense>{children}</Suspense>
             {/* <FloatingNav /> */} 
           </main>

@@ -33,7 +33,6 @@ export const NavBar = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Update activeLink when a section is in view
             setActiveLink(`#${entry.target.id}`);
           }
         });
@@ -55,7 +54,7 @@ export const NavBar = () => {
   }, []);
 
   return (
-    <div className="nav-bar fixed bottom-10 w-screen flex justify-center z-50">
+    <Div className="nav-bar fixed bottom-10 w-screen flex justify-center z-50">
       <div className="bg-[#00000031] px-5 py-3 border border-collapse rounded-lg backdrop-blur-md flex gap-6 items-center text-white">
         {navLinks.map(({ href, label, icon }) => (
           <Link href={href} passHref key={href}>
@@ -71,7 +70,7 @@ export const NavBar = () => {
           </Link>
         ))}
       </div>
-    </div>
+    </Div>
   );
 };
 

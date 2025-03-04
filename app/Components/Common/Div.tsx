@@ -1,49 +1,50 @@
-// In Div.tsx
 "use client";
+import React, { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+gsap.registerPlugin(ScrollTrigger);
 
 type DivProps = {
   children?: React.ReactNode;
   className?: string;
-  ref?: React.Ref<HTMLDivElement>; // Accepts a ref to a div element
+  id?: string;
   style?: React.CSSProperties;
-  aosProps?: {
-    animation?: string;
-    easing?: string;
-    duration?: number;
-    delay?: number;
-  };
-  id?: string
-  onClick?: React.MouseEventHandler<HTMLDivElement>; // Correct typing for onClick
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 };
 
-export const Div = ({ style,children, className, aosProps , ref, id, onClick}: DivProps) => {
-  useEffect(() => {
-    // Initialize AOS with default configuration
-    AOS.init({
-      duration: 1000, // Default duration for animations
-      easing: "linear", // Default easing for animations
-      once: true, // Animation happens only once
-      offset: 20, // Trigger animation 120px before element is in view
-    });
-    AOS.refresh(); // Refresh AOS for newly added elements
+export const Div = ({ style, children, className, id, onClick }: DivProps) => {
+  const divRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if (divRef.current) {
+      gsap.fromTo(
+        divRef.current,
+        { y: 100, opacity: 0 }, 
+        {
+          y: 0,
+          opacity: 1, 
+          duration: 1.2, 
+          ease: "back.in",
+          scrollTrigger: {
+            trigger: divRef.current,
+            start: "top 85%", 
+            end: "top 50%",
+            toggleActions: "play none none reverse", 
+          },
+        }
+      );
+    }
   }, []);
 
   return (
     <div
-
-    id={id}
-    ref={ref}
-    onClick={onClick}
-    style={style}
-      className={className}
-      data-aos={aosProps?.animation || "fade-up"} // Default animation
-      data-aos-easing={aosProps?.easing || "ease-in-out"} // Default easing
-      data-aos-duration={aosProps?.duration || 1000} // Default duration
-      data-aos-delay={aosProps?.delay || 0} // Default delay
+      id={id}
+      ref={divRef}
+      onClick={onClick}
+      style={style}
+      className={`transition-all duration-300 ${className}`} // Ensures smooth CSS fallback
     >
       {children}
     </div>

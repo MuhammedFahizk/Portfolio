@@ -7,20 +7,23 @@ import { PiNavigationArrowFill } from "react-icons/pi";
 import gsap from "gsap";
 
 export const Hero = () => {
-  const textRef = useRef(null);
+  const textRef = useRef<HTMLSpanElement | null>(null); // ✅ Specify correct type
 
   useEffect(() => {
+    if (!textRef.current) return; // ✅ Prevent accessing null
+
     const texts = ["Full", "MERN"];
     let currentTextIndex = 0;
 
     const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+
     tl.to(".trans", {
       opacity: 0,
       duration: 0.5,
       ease: "power3.out",
       onComplete: () => {
         currentTextIndex = (currentTextIndex + 1) % texts.length;
-        textRef.current.innerText = texts[currentTextIndex];
+        if (textRef.current) textRef.current.innerText = texts[currentTextIndex]; 
       },
     })
       .to(textRef.current, { opacity: 1, duration: 0.5 })
@@ -33,25 +36,25 @@ export const Hero = () => {
 
   return (
     <Background>
-      <Div className="container mx-auto flex flex-col md:flex-row items-center  justify-between min-h-screen px-10 text-white">
+      <Div className="container mx-auto flex flex-col md:flex-row items-center justify-between min-h-screen px-10 text-white">
         <Div className="md:w-1/2 text-center md:text-left">
           <Div className="font-courier text-lg mb-4">Hi all. I am</Div>
           <Div className="text-5xl font-acme mb-4 leading-tight">
             Muhammed Fahiz K
           </Div>
-          <Div className=" text-xl font-courier text-primary mb-6">
+          <Div className="text-xl font-courier  mb-6">
             &gt; &nbsp;
             <span ref={textRef} className="trans">
               Full
             </span>
             &nbsp;Stack Developer.
           </Div>
-          <Div className=" text-xs font-courier ">
-            <span className="text-gray-500 ">
+          <Div className="text-xs font-courier">
+            <span className="text-gray-500">
               // you can also see it on my Github Page <br />
             </span>
-            <span className="text-blue-700">const </span>{" "}
-            <span className=" text-[#3BBE9F]"> gitHubLink </span> = &nbsp;
+            <span className="text-blue-700">const </span>
+            <span className="text-[#3BBE9F]"> gitHubLink </span> = &nbsp;
             <span className="text-[#BD8306]">
               <a
                 href="https://github.com/MuhammedFahizk"

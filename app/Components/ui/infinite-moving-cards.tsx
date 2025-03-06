@@ -22,8 +22,8 @@ export const InfiniteMovingCards = ({
   pauseOnHover = true,
   className,
 }: InfiniteMovingCardsProps) => {
-  const containerRef = React.useRef<HTMLDivElement | null>(null); // Corrected here
-  const scrollerRef = React.useRef<HTMLUListElement | null>(null); // Explicitly type the ref as HTMLUListElement
+  const containerRef = React.useRef<HTMLDivElement | null>(null); 
+  const scrollerRef = React.useRef<HTMLUListElement | null>(null);
 
   console.log(items);
 
@@ -48,7 +48,7 @@ export const InfiniteMovingCards = ({
   
       // Speed setup
       if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
+        containerRef.current.style.setProperty("--animation-duration", "30s");
       } else if (speed === "normal") {
         containerRef.current.style.setProperty("--animation-duration", "40s");
       } else {
@@ -65,7 +65,7 @@ export const InfiniteMovingCards = ({
   }, [addAnimation]);
  
   return (
-    <Div
+    <div
       ref={containerRef}
       className={cn(
         "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
@@ -104,6 +104,6 @@ export const InfiniteMovingCards = ({
           </li>
         ))}
       </ul>
-    </Div>
+    </div>
   );
 };

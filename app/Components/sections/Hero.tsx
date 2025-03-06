@@ -51,7 +51,7 @@ export const Hero = () => {
           </Div>
           <Div className="text-xs font-courier">
             <span className="text-gray-500">
-              // you can also see it on my Github Page <br />
+              &#x2f;&#x2f; you can also see it on my Github Page <br />
             </span>
             <span className="text-blue-700">const </span>
             <span className="text-[#3BBE9F]"> gitHubLink </span> = &nbsp;

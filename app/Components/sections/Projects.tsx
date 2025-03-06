@@ -76,8 +76,10 @@ export const Projects = () => {
 
       className="my-20 py-10 px-4 sm:px-2 lg:px-8 xl:px-10 flex flex-col justify-center items-center"
     >
+
+      
       {/* Section Title */}
-      <h1 className="text-3xl md:text-4xl font-bold mb-10 text-center text-primary">
+      <h1 className="text-3xl font-acme   md:text-4xl font-bold mb-10 text-center text-primary">
         Favorites
       </h1>
 
@@ -91,6 +93,7 @@ export const Projects = () => {
           />
         ))}
       </Div>
+
 
   
       <Button className="my-10 bg-secondary hover:scale-105">

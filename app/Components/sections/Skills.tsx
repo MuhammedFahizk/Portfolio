@@ -60,6 +60,7 @@ export function Skills() {
         speed=""
       />
     </div>
+    
   );
 }
 

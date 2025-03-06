@@ -69,7 +69,7 @@ export const About = () => {
       <Div className="flex flex-col md:flex-row items-center justify-between  border border-gray-600 bg-opacity-80 p-6 md:p-10  w-full max-w-5xl">
         {/* Text Section */}
         <div className="w-full md:w-4/5 text-white space-y-6 text-center md:text-left">
-          <h1 className="text-2xl md:text-3xl font-bold mb-4 font-acme ">
+          <h1 className="text-2xl md:text-3xl text-primary font-bold mb-4 font-acme ">
             About Me
           </h1>
           <p

@@ -7,7 +7,7 @@ import { FaUserAlt } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { MdContactMail } from "react-icons/md";
 import { CiInstagram, CiLinkedin } from "react-icons/ci";
-import { PiWhatsappLogoLight, PiGithubLogoLight } from "react-icons/pi";
+import {  PiGithubLogoLight } from "react-icons/pi";
 
 export const NavBar = () => {
   // State to track the current active link
